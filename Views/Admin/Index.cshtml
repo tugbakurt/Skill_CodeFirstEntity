@@ -1,0 +1,27 @@
+﻿@using Skill_CodeFirstEntity.Models.sınıflar
+@model List<yetenekler>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutNavbar.cshtml";
+}
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>YETENEK</th>
+        <th>DEĞER</th>
+        <th>SİL</th>
+        <th>GÜNCELLE</th>
+    </tr>
+    @foreach (var p in Model)
+    {
+        <tr>
+            <td>@p.id</td>
+            <td>@p.yetenekaciklama</td>
+            <td>@p.deger</td>
+            <td> <a href="/Admin/YetenekSil/@p.id"class="btn btn-danger">Sil</a></td>
+            <td> <a  href="/Admin/YetenekGetir/@p.id" class="btn btn-success">Güncelle</a></td>
+        </tr>
+    }
+
+
+</table>
